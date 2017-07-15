@@ -8,7 +8,6 @@ import { SessionService } from './session.service';
 import { FormsModule } from '@angular/forms';
 
 
-
 ////GENERAL ROUTES
 import { AuthorComponent } from './views/general/author/author.component';
 import { HomeComponent } from './views/general/home/home.component';
@@ -29,7 +28,8 @@ import { SingleQuoteComponent } from './views/quotes/single-quote/single-quote.c
 import { DashboardComponent } from './views/user/dashboard/dashboard.component';
 import { ProfileComponent } from './views/user/profile/profile.component';
 import { EditProfileComponent } from './views/user/edit-profile/edit-profile.component';
-import { LoginComponent } from './views/user/login/login.component';
+import { LogInComponent } from './views/user/login/login.component';
+import { SignUpComponent } from './views/user/signup/signup.component';
 ////ADMIN ROUTES
 import { BackendComponent } from './views/admin/backend/backend.component';
 import { AddQuoteComponent } from './views/admin/add-quote/add-quote.component';
@@ -56,7 +56,7 @@ const routes: Routes = [
   { path: '/dashboard', component: DashboardComponent },
   { path: '/profile', component: ProfileComponent },
   { path: '/edit-profile', component: EditProfileComponent },
-  { path: '/login', component: LoginComponent },
+  { path: '/login', component: LogInComponent },
 ////ADMIN ROUTES
   { path: '/backend', component: BackendComponent },
   { path: '/add-quote', component: AddQuoteComponent },
@@ -84,14 +84,15 @@ const routes: Routes = [
     QuoteListComponent,
     SingleQuoteComponent,
     QuotesGridComponent,
-    LoginComponent
+    LogInComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
   ],
-  providers: [QuotesService,SessionService],
+  providers: [QuotesService, SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

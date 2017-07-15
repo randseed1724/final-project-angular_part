@@ -1,48 +1,62 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
+import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SessionService {
+  baseUrl: string = 'http://localhost:3000';
 
-  constructor(private myHttp: Http) { }
+  private loggedInSource = new Subject<any>();
 
-  signup (user) {
-    const theOriginalPromise = this.myHttp.post('http://localhost:3000/signup', user).toPromise();
+  loggedIn$ = this.loggedInSource.asObservable();
+  // app component will subscribe this "loggedIn$"
 
-    const theParsedPromise = theOriginalPromise.then((result) => {
-      return result.json();
-    });
+  constructor(
+    private myHttpThang: Http
+  ) { }
 
-    return theParsedPromise;
+  loggedIn (userInfo) {
+    this.loggedInSource.next(userInfo);
   }
 
-  login (credentials) {
-    const theOriginalPromise = this.myHttp.post('http://localhost:3000/login', credentials).toPromise();
-
-    const theParsedPromise = theOriginalPromise.then((result) => {
-      return result.json();
-    });
-
-    return theParsedPromise;
+  checkLogin() {
+      return this.myHttpThang.get(this.baseUrl + '/api/checklogin')
+        .toPromise()
+        .then(res => res.json());
   }
 
-  logout () {
-    return this.myHttp.post('http://localhost:3000/logout', {})
-      .toPromise()
-      .then(result => result.json());
+  login(email, password) {
+      return this.myHttpThang
+        .post(
+          this.baseUrl + '/api/login',
+          {
+            loginEmail: email,
+            loginPassword: password
+          }
+        )
+        .toPromise()
+        .then(res => res.json());
   }
 
-  isLoggedIn () {
-    return this.myHttp.get('http://localhost:3000/loggedin')
-      .toPromise()
-      .then(result => result.json());
+  signup(userInfo) {
+      return this.myHttpThang
+        .post(
+          this.baseUrl + '/api/signup',
+          userInfo
+        )
+        .toPromise()
+        .then(res => res.json());
   }
 
-  getPrivate () {
-    return this.myHttp.get('http://localhost:3000/private')
-      .toPromise()
-      .then(result => result.json());
+  logout() {
+   return this.myHttpThang
+   .post(
+     this.baseUrl + '/api/logout',
+     {},
+     { withCredentials: true }
+   )
+   .toPromise()
+   .then(res => res.json());
   }
-
 }

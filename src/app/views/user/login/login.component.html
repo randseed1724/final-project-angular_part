@@ -1,12 +1,16 @@
+
+
 <!-- Button to open the modal login form -->
   <li id="login"><a onclick="document.getElementById('id01').style.display='block'">Login/Signup</a></li>
 
 <!-- The Modal -->
 <div id="id01" class="modal">
+
   <span onclick="document.getElementById('id01').style.display='none'"
 class="close" title="Close Modal">&times;</span>
 
   <!-- Modal Content -->
+
   <div id="login-overlay" class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">
@@ -14,18 +18,22 @@ class="close" title="Close Modal">&times;</span>
    <h4 class="modal-title" id="myModalLabel">Login to site.com</h4>
 </div>
 <div class="modal-body">
+  <p class="error"> {{ errorMessage }} </p>
+
    <div class="row">
        <div class="col-xs-6">
            <div class="well">
-               <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+
+
+               <form (ngSubmit)="submitLogin()" id="loginForm" method="POST" action="/login/" novalidate="novalidate">
                    <div class="form-group">
-                       <label for="username" class="control-label">Username</label>
-                       <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                       <label for="username" class="control-label">Email</label>
+                       <input id="username" [(ngModel)]="fromEmail" type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
                        <span class="help-block"></span>
                    </div>
                    <div class="form-group">
                        <label for="password" class="control-label">Password</label>
-                       <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                       <input id="password" [(ngModel)]="fromPassword"  type="password" class="form-control"  name="password" value="" required="" title="Please enter your password">
                        <span class="help-block"></span>
                    </div>
                    <div id="loginErrorMsg" class="alert alert-error hide">Wrong username og password</div>
@@ -35,9 +43,11 @@ class="close" title="Close Modal">&times;</span>
                        </label>
                        <p class="help-block">(if this is a private computer)</p>
                    </div>
-                   <button type="submit" class="btn btn-success btn-block">Login</button>
+                   <button (click)="submitLogin()" type="submit" class="btn btn-success btn-block">Login</button>
                    <a href="/forgot/" class="btn btn-default btn-block">Help to login</a>
                </form>
+
+
            </div>
        </div>
        <div class="col-xs-6">

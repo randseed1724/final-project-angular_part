@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { SessionService } from '../../../session.service';
 
 @Component({
@@ -6,67 +7,28 @@ import { SessionService } from '../../../session.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LogInComponent implements OnInit {
+  formEmail: string;
+  formPassword: string;
+  errorMessage: string;
 
-  title = 'app works!';
+  constructor(
+    private sessionThang: SessionService,
+    private routerThang: Router
+  ) { }
 
-    loginInfo = {};
-    signupInfo = {};
+  ngOnInit() {
+  }
 
-    user: any;
-    error: string;
-    myData: any;
-
-    constructor(private mySession: SessionService) {}
-
-    ngOnInit() {
-   this.mySession.isLoggedIn()
-     .then(userInfo => this.user = userInfo);
- }
-
- login() {
-   const thePromise = this.mySession.login(this.loginInfo);
-
-   thePromise.then((userInfo) => {
-     this.user = userInfo;
-     this.error = null;
-   });
-
-   thePromise.catch((err) => {
-     this.user = null;
-     this.error = err;
-   });
- }
-
- signup() {
-   const thePromise = this.mySession.signup(this.signupInfo);
-
-   thePromise.then((userInfo) => {
-     this.user = userInfo;
-     this.error = null;
-   });
-
-   thePromise.catch((err) => {
-     this.user = null;
-     this.error = err;
-   });
- }
-
- logout() {
-   this.mySession.logout()
-     .then(() => {
-       this.user = null;
-       this.error = null;
-     })
-     .catch(err => this.error = err);
- }
-
- getPrivateData() {
-   this.mySession.getPrivate()
-     .then((data) => {
-       this.myData = data;
-       this.error = null;
-     })
-     .catch(err => this.error = err);
- }
+  submitLogin() {
+    this.sessionThang.login(this.formEmail, this.formPassword)
+      .then((userFromApi) => {
+          this.routerThang.navigate(['/lists']);
+          this.sessionThang.loggedIn(userFromApi);
+      })
+      .catch((errResponse) => {
+          const apiInfo = errResponse.json();
+          this.errorMessage = apiInfo.message;
+      });
+  }
 }
