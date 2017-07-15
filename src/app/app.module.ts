@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
-import { Routes } from "@angular/router";
 import { QuotesService } from './quotesrequest.service';
 import { SessionService } from './session.service';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 
 ////GENERAL ROUTES
@@ -37,29 +37,29 @@ import { AddQuoteComponent } from './views/admin/add-quote/add-quote.component';
 
 const routes: Routes = [
 ////GENERAL ROUTES
-  { path: '/home',  component: HomeComponent },
+  { path: 'home',  component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '/make-my-own', component: MakeMyOwnComponent },
-  { path: '/author', component: AuthorComponent },
-  { path: '/author:id', component: AuthorComponent },
-  { path: '/categories', component: CategoriesComponent },
-  { path: '/about', component: AboutComponent },
-  { path: '/gallery', component: GalleryComponent },
-  { path: '/contact', component: ContactComponent },
+  { path: 'make-my-own', component: MakeMyOwnComponent },
+  { path: 'author', component: AuthorComponent },
+  { path: 'author:id', component: AuthorComponent },
+  { path: 'categories', component: CategoriesComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'gallery', component: GalleryComponent },
+  { path: 'contact', component: ContactComponent },
 ////STORE ROUTES
-  { path: '/cart', component: CartComponent },
-  { path: '/checkout', component: CheckoutComponent },
-  { path: '/orders', component: OrdersComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'orders', component: OrdersComponent },
 ////QUOTES ROUTES
-  { path: '/quotes', component: QuoteListComponent },
+  { path: 'quotes', component: QuoteListComponent },
 ////USER ROUTES
-  { path: '/dashboard', component: DashboardComponent },
-  { path: '/profile', component: ProfileComponent },
-  { path: '/edit-profile', component: EditProfileComponent },
-  { path: '/login', component: LogInComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'edit-profile', component: EditProfileComponent },
+  { path: 'login', component: LogInComponent },
 ////ADMIN ROUTES
-  { path: '/backend', component: BackendComponent },
-  { path: '/add-quote', component: AddQuoteComponent },
+  { path: 'backend', component: BackendComponent },
+  { path: 'add-quote', component: AddQuoteComponent },
 ];
 
 @NgModule({
@@ -91,6 +91,7 @@ const routes: Routes = [
     BrowserModule,
     HttpModule,
     FormsModule,
+    RouterModule.forRoot(routes)  //  <!-- "routes" is the array defined above
   ],
   providers: [QuotesService, SessionService],
   bootstrap: [AppComponent]
