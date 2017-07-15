@@ -1,0 +1,10 @@
+.panel-body {
+    font-style: italic;
+}
+.panel-body span {
+    float: right;
+    font-weight: bold;
+}
+.panel-footer {
+    text-align: right;
+}

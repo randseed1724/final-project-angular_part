@@ -1,0 +1,25 @@
+<div class="error" *ngIf="errorMessage"> {{ errorMessage }} </div>
+
+<div class="container quote-list">
+    <div class="row ">
+        <div *ngFor="let oneQuote of quoteList">
+               <div class="col-sm-4 ">
+                      <div class="panel panel-success">
+                            <div class="panel-heading">
+                                  {{ oneQuote.category }}
+                            </div>
+                            <div class="panel-body">
+                              <h4>"{{ oneQuote.quote }}"</h4>
+                                  <span class="authorGrid">
+                                - {{ oneQuote.author }}
+                                  </span>
+                            </div>
+
+                            <div class="panel-footer">
+                                  <a href="#">More</a>
+                            </div>
+                      </div>
+                </div>
+         </div>
+     </div>
+</div>
