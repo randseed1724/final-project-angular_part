@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionService } from '../../../session.service';
-
 import { SignUpComponent } from '../signup/signup.component';
 
 
@@ -9,6 +8,7 @@ import { SignUpComponent } from '../signup/signup.component';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
+  directives : [SignUpComponent]
 })
 export class LogInComponent implements OnInit {
   formEmail: string;
