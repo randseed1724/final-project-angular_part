@@ -7,8 +7,7 @@ import { SignUpComponent } from '../signup/signup.component';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
-  directives : [SignUpComponent]
+  styleUrls: ['./login.component.css'],
 })
 export class LogInComponent implements OnInit {
   formEmail: string;

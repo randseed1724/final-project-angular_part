@@ -1,24 +1,30 @@
-<h3> Sign Up </h3>
 
-<p class="error" *ngIf="errorMessage">
-  {{ errorMessage }}
-</p>
+<div class="col-xs-6">
+  <h3> Sign Up </h3>
 
-<form (ngSubmit)="submitSignup()">
-  <label for="full-name-input"> Full Name </label>
-  <input  id="full-name-input" type="text" placeholder="Pizza McPizzaton"
-      [(ngModel)]="newUser.signupFullName" name="signupFullName">
-  <br>
+  <div class="well">
 
-  <label for="email-input"> Email </label>
-  <input  id="email-input" type="email" placeholder="mcp@example.com"
-      [(ngModel)]="newUser.signupEmail" name="signupEmail">
-  <br>
 
-  <label for="password-input"> Password </label>
-  <input  id="password-input" type="password" placeholder="*****"
-      [(ngModel)]="newUser.signupPassword" name="signupPassword">
-  <br>
+      <p class="error" *ngIf="errorMessage">
+        {{ errorMessage }}
+      </p>
 
-  <button> Sign Up </button>
-</form>
+      <form id="loginForm" (ngSubmit)="submitSignup()">
+
+      <div class="form-group">
+        <label  for="email-input" class="control-label" > Email </label>
+        <input  id="email-input" type="email" placeholder="mcp@example.com"
+            [(ngModel)]="newUser.signupEmail" name="signupEmail" class="form-control">
+      </div>
+
+        <div class="form-group">
+        <label class="control-label" for="password-input"> Password </label>
+        <input  id="password-input" type="password" placeholder="*****"
+            [(ngModel)]="newUser.signupPassword" name="signupPassword" class="form-control">
+      </div>
+
+        <button (click)="submitSignup()" class="btn btn-success btn-block" > Sign Up </button>
+      </form>
+
+  </div>
+</div>
