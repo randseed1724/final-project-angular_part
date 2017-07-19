@@ -35,10 +35,10 @@ import { BackendComponent } from './views/admin/backend/backend.component';
 import { AddQuoteComponent } from './views/admin/add-quote/add-quote.component';
 
 
-const routes: Routes = [
+const appRoutes: Routes = [
 ////GENERAL ROUTES
-  { path: '',  component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '',  component: HomeComponent },
   { path: 'make-my-own', component: MakeMyOwnComponent },
   { path: 'author', component: AuthorComponent },
   { path: 'author:id', component: AuthorComponent },
@@ -93,7 +93,7 @@ const routes: Routes = [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(routes)  //  <!-- "routes" is the array defined above
+    RouterModule.forRoot(appRoutes)  //  <!-- "routes" is the array defined above
   ],
   providers: [QuotesService, SessionService],
   bootstrap: [AppComponent]

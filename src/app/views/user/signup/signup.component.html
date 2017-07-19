@@ -23,8 +23,23 @@
             [(ngModel)]="newUser.signupPassword" name="signupPassword" class="form-control">
       </div>
 
-        <button (click)="submitSignup()" class="btn btn-success btn-block" > Sign Up </button>
+        <button id="hideModel" (click)="submitSignup()" class="btn btn-success btn-block" > Sign Up </button>
       </form>
 
   </div>
 </div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+$(".sign").onclick = function(event) {
+        modal.style.display = "none";
+}
+
+var hideModel = document.getElementById('hideModel');
+console.log("HIIIIIIII");
+  
+
+</script>
