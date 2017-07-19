@@ -37,7 +37,7 @@ import { AddQuoteComponent } from './views/admin/add-quote/add-quote.component';
 
 const routes: Routes = [
 ////GENERAL ROUTES
-  { path: 'home',  component: HomeComponent },
+  { path: '',  component: HomeComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'make-my-own', component: MakeMyOwnComponent },
   { path: 'author', component: AuthorComponent },
@@ -57,6 +57,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'login', component: LogInComponent },
+  { path: 'new-customer', component: SignUpComponent },
+
 ////ADMIN ROUTES
   { path: 'backend', component: BackendComponent },
   { path: 'add-quote', component: AddQuoteComponent },
