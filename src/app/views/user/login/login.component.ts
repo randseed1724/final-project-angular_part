@@ -13,6 +13,9 @@ export class LogInComponent implements OnInit {
   formEmail: string;
   formPassword: string;
   errorMessage: string;
+  booleanito: boolean;
+  booleanito2: boolean;
+
 
   constructor(
     private sessionThang: SessionService,
@@ -26,6 +29,8 @@ export class LogInComponent implements OnInit {
 
     this.sessionThang.login(this.formEmail, this.formPassword)
       .then((userFromApi) => {
+          this.booleanito = true;
+          this.booleanito2 = true;
           this.routerThang.navigate(['/profile']);
           this.sessionThang.loggedIn(userFromApi);
       })
