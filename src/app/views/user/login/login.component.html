@@ -25,16 +25,15 @@ class="close" title="Close Modal">&times;</span>
 
            <div class="well">
 
-               <form (ngSubmit)="submitLogin()" id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+               <form (ngSubmit)="submitLogin()" id="loginForm" >
                    <div class="form-group">
-                       <label for="username" class="control-label">Email</label>
-                       <input id="username" [(ngModel)]="fromEmail" type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
-                       <span class="help-block"></span>
+                       <label for="email-input" class="control-label">Email</label>
+                       <input id="email-input" type="email" class="form-control"
+                       [(ngModel)]="formEmail" name="formEmail" title="Please enter you username" placeholder="example@gmail.com">
                    </div>
                    <div class="form-group">
-                       <label for="password" class="control-label">Password</label>
-                       <input id="password" [(ngModel)]="fromPassword"  type="password" class="form-control"  name="password" value="" required="" title="Please enter your password">
-                       <span class="help-block"></span>
+                       <label for="password-input" class="control-label">Password</label>
+                       <input id="password-input" [(ngModel)]="formPassword" name="formPassword" type="password" class="form-control"  placeholder="*******"  title="Please enter your password">
                    </div>
                    <div id="loginErrorMsg" class="alert alert-error hide">{{ errorMessage }}</div>
 
@@ -55,6 +54,12 @@ class="close" title="Close Modal">&times;</span>
            <p><a [routerLink]="['new-customer']" class=" ide btn btn-info btn-block">Yes please, register now!</a></p>
        </div>
        <app-signup></app-signup>
+       <div class="login">
+         <button id="facebook"><a href="/auth/facebook">Log In with Facebook</a></button>
+         <!-- <button id="google"><a href="/auth/google">Log In with Google</a></button> -->
+       <hr />
+
+       </div>
    </div>
 </div>
 </div>

@@ -93,7 +93,9 @@ const appRoutes: Routes = [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)  //  <!-- "routes" is the array defined above
+    RouterModule.forRoot(appRoutes,
+    { enableTracing: true } // <-- debugging purposes only
+  )  //  <!-- "routes" is the array defined above
   ],
   providers: [QuotesService, SessionService],
   bootstrap: [AppComponent]

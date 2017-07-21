@@ -10,18 +10,22 @@ export class SessionService {
   private loggedInSource = new Subject<any>();
 
   loggedIn$ = this.loggedInSource.asObservable();
-  // app component will subscribe this "loggedIn$"
+  // app component will subscribe to "loggedIn$"
 
   constructor(
     private myHttpThang: Http
   ) { }
 
   loggedIn (userInfo) {
-    this.loggedInSource.next(userInfo);
+      this.loggedInSource.next(userInfo);
   }
 
   checkLogin() {
-      return this.myHttpThang.get(this.baseUrl + '/api/checklogin')
+      return this.myHttpThang
+        .get(
+          this.baseUrl + '/api/checklogin',
+          { withCredentials: true }
+        )
         .toPromise()
         .then(res => res.json());
   }
@@ -33,7 +37,8 @@ export class SessionService {
           {
             loginEmail: email,
             loginPassword: password
-          }
+          },
+          { withCredentials: true }
         )
         .toPromise()
         .then(res => res.json());
@@ -43,20 +48,22 @@ export class SessionService {
       return this.myHttpThang
         .post(
           this.baseUrl + '/api/signup',
-          userInfo
+          userInfo,
+          { withCredentials: true }
         )
         .toPromise()
         .then(res => res.json());
   }
 
   logout() {
-   return this.myHttpThang
-   .post(
-     this.baseUrl + '/api/logout',
-     {},
-     { withCredentials: true }
-   )
-   .toPromise()
-   .then(res => res.json());
+      return this.myHttpThang
+        .post(
+          this.baseUrl + '/api/logout',
+          {},
+          { withCredentials: true }
+        )
+        .toPromise()
+        .then(res => res.json());
   }
+
 }

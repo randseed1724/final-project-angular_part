@@ -32,6 +32,7 @@ export class AppComponent {
     })
     // else don't do anything
     .catch((err) => {
+      console.log("<ERROR!></ERROR!>",err)
        this.routerThang.navigate(['/']);
     });
   }

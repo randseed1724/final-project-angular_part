@@ -23,7 +23,6 @@ export class LogInComponent implements OnInit {
   }
 
   submitLogin() {
-    console.log("SignUpComponent", SignUpComponent)
 
     this.sessionThang.login(this.formEmail, this.formPassword)
       .then((userFromApi) => {
