@@ -1,11 +1,24 @@
-#login > a {
-    color: #9d9d9d;
-}
+
 
 #login {
     padding-top: 15px;
 }
-
+#login a {
+    padding-left: 1em;
+    padding-right: 1em;
+}
 .ide {
   display: none;
+}
+
+.nav-item a {
+    font-size: 17px;
+    color: #666d70;
+}
+
+#login a:hover {
+    text-decoration: none;
+    background-color: #eee;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
