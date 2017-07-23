@@ -4,31 +4,44 @@
 
 /* ------------------------ SLIDER NAVIGATION-----------------------  */
 /* ------------------------  -----------------------  */
+.fa-chevron-right, .fa-chevron-left {
+    display: none;
+}
+
+.slider:hover .fa-chevron-right   {
+  display: block;
+}
+.slider:hover .fa-chevron-left  {
+  display: block;
+}
+
 .rslides_nav.rslides1_nav.prev {
   font-family: FontAwesome;
   font-style: normal;
   font-weight: normal;
   text-decoration: inherit;
   position: absolute;
-  font-size: 4em;
+  font-size: 3.2em;
   color: #03A9F4;
-  top: 65%;
-  left: 26%;
-  margin: -299px 0 0 -200px;
+  top: 38%;
+  left: 22vw;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 2;
 }
 
 
 .rslides_nav.rslides1_nav.next {
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    text-decoration: inherit;
-    position: absolute;
-    font-size: 4em;
-    color: #03A9F4;
-    top: 65%;
-    right: 12%;
-    margin: -299px 0 0 -200px;
-    z-index: 2;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  font-size: 3.2em;
+  color: #03A9F4;
+  top: 38%;
+  right: 22vw;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
 }

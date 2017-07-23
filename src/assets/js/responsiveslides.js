@@ -11,7 +11,6 @@
 (function ($, window, i) {
 
   $.fn.responsiveSlides = function (options) {
-    console.log("JHSAIUDHFISUDHFI");
 
 
     // Default settings
