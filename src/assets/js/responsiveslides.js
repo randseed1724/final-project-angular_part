@@ -312,8 +312,8 @@
         // Navigation
         if (settings.nav) {
           var navMarkup =
-            "<a href='#' class='" + navClass + " prev'>" + "<i class='fa fa-chevron-left' aria-hidden='true'></i>" + "</a>" +
-            "<a href='#' class='" + navClass + " next'>" +  "<i class='fa fa-chevron-right' aria-hidden='true'></i>" + "</a>";
+            "<a href='#' class='" + navClass + " prev'>" + "<i class='fa fa-chevron-left container' aria-hidden='true'></i>" + "</a>" +
+            "<a href='#' class='" + navClass + " next'>" +  "<i class='fa fa-chevron-right container' aria-hidden='true'></i>" + "</a>";
 
 
 
