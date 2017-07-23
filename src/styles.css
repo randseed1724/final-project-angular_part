@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+/* ------------------------ SLIDER NAVIGATION-----------------------  */
+/* ------------------------  -----------------------  */
+.rslides_nav.rslides1_nav.prev {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  font-size: 4em;
+  color: #03A9F4;
+  top: 65%;
+  left: 26%;
+  margin: -299px 0 0 -200px;
+  z-index: 2;
+}
+
+
+.rslides_nav.rslides1_nav.next {
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    position: absolute;
+    font-size: 4em;
+    color: #03A9F4;
+    top: 65%;
+    right: 12%;
+    margin: -299px 0 0 -200px;
+    z-index: 2;
+}

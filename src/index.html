@@ -6,21 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quotes for Inspiration</title>
 
-  <!-- <link rel="stylesheet" href="/stylesheets/style.css"> -->
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="./assets/js/responsiveslides.js"></script>
+
   <link href="//fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet">
   <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script src="responsiveslides.min.js"></script>
-  
-
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- <script src="api-3.0.js?id=header-quote,footer-quote&formatter=format_quote" type="text/javascript" charset="utf-8"> </script> -->
 
 </head>
 <body>
@@ -38,6 +34,20 @@
       <button type="button" class="btn btn-danger">Sign Up</button>
     </form>
   </footer>
+  <script>
+    $(function() {
+      $(".rslides").responsiveSlides({
+      auto: true,             // Boolean: Animate automatically, true or false
+      speed: 1000,            // Integer: Speed of the transition, in milliseconds
+  nav: true,             // Boolean: Show navigation, true or false
+  pause: true,           // Boolean: Pause on hover, true or false
+
+  prevText: "Previous",   // String: Text for the "previous" button
+  nextText: "Next",       // String: Text for the "next" button
+
+    });
+    });
+  </script>
 
 </body>
 </html>
