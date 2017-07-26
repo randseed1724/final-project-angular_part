@@ -15,6 +15,8 @@ export class QuotesGridComponent implements OnInit {
 
 
 ngOnInit() {
+  // console.log("LOOK HERE ==== >",   this.quotes.getList() );
+
   this.quotes.getList()
     .then((quotesParam) => {
       this.quoteList = quotesParam;

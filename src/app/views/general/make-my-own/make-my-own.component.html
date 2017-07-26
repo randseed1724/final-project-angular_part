@@ -1,10 +1,20 @@
 <div id="yourQuote">
-  <h3>Create your own quote</h3>
-  <p>
-  Write and create your own quote for you to use.
-  <!-- <form>
-    <input />
-    <button ng:click="addQuote()">New Wine</button>
-  </form> -->
-  </p>
+  <h3>Create your own bound quote</h3>
+
+  <form (ngSubmit)="createNewQuote(myForm)" #myForm="ngForm">
+      <p>Quote:
+       <input type="text" name="quote" [(ngModel)]="quote" required />
+      </p>
+      <p>Author Name:
+        <input type="text" name="author" [(ngModel)]="author" required />
+      </p>
+      <button type="submit"> Submit </button>
+    </form>
+</div>
+
+<div *ngIf="submited">
+  <div *ngFor="let oneQuote of allUserQuotes">
+    Quote:  {{ oneQuote.quote}}
+    Name:  {{ oneQuote.author}}
+  </div>
 </div>

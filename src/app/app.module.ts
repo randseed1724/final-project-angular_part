@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { QuotesService } from './quotesrequest.service';
 import { SessionService } from './session.service';
+import { WriteQuoteService } from './write-your-quote.service';
+
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -11,7 +13,7 @@ import { RouterModule, Routes } from '@angular/router';
 ////GENERAL ROUTES
 import { AuthorComponent } from './views/general/author/author.component';
 import { HomeComponent } from './views/general/home/home.component';
-import { MakeMyOwnComponent } from './views/general/make-my-own/make-my-own.component';
+import { NewQuoteComponent } from './views/general/make-my-own/make-my-own.component';
 import { CategoriesComponent } from './views/general/categories/categories.component';
 import { AboutComponent } from './views/general/about/about.component';
 import { GalleryComponent } from './views/general/gallery/gallery.component';
@@ -39,7 +41,7 @@ const appRoutes: Routes = [
 ////GENERAL ROUTES
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '',  component: HomeComponent },
-  { path: 'make-my-own', component: MakeMyOwnComponent },
+  { path: 'make-my-own', component: NewQuoteComponent },
   { path: 'author', component: AuthorComponent },
   { path: 'author:id', component: AuthorComponent },
   { path: 'categories', component: CategoriesComponent },
@@ -68,7 +70,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    MakeMyOwnComponent,
+    NewQuoteComponent,
     AuthorComponent,
     CategoriesComponent,
     AboutComponent,
@@ -97,7 +99,7 @@ const appRoutes: Routes = [
     { enableTracing: true } // <-- debugging purposes only
   )  //  <!-- "routes" is the array defined above
   ],
-  providers: [QuotesService, SessionService],
+  providers: [QuotesService, SessionService, WriteQuoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

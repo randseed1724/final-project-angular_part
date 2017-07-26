@@ -31,7 +31,7 @@ export class LogInComponent implements OnInit {
       .then((userFromApi) => {
           this.booleanito = true;
           this.booleanito2 = true;
-          this.routerThang.navigate(['/profile']);
+          this.routerThang.navigate(['/']);
           this.sessionThang.loggedIn(userFromApi);
       })
       .catch((errResponse) => {
