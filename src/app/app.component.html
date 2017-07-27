@@ -17,11 +17,11 @@
           <li class="nav-item"><a  href="/#contact">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li>
+          <li *ngIf="!isLoggedIn">
             <app-login></app-login>
           </li>
           <li>
-             <button *ngIf="isLoggedIn" (click)="logMeOut()">
+             <button id="logOut" *ngIf="isLoggedIn" (click)="logMeOut()">
                Log Out
              </button>
           </li>
@@ -33,10 +33,11 @@
   </nav>
 </div>
 
-
-<div id="productsGrid">
-
-<router-outlet></router-outlet>
-
-
+<div *ngIf="isLoggedIn" id="write-my-own" >
+  <app-make-my-own></app-make-my-own>
 </div>
+
+
+    <div id="productsGrid">
+        <router-outlet></router-outlet>
+    </div>

@@ -20,7 +20,21 @@
     position: relative;
     background: white;
   }
+/* navigation */
 
+  #logOut {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    font-size: 17px;
+    color: #666d70;
+    padding: 13px;
+  }
+  #logOut:hover {
+    text-decoration: none;
+    background-color: #eee;
+  }
 
   .navigation {
       padding: 1.4em 0px;
@@ -30,7 +44,7 @@
     margin-bottom: 0px;
   }
   #authorHeader {
-      float: right;
+    float: right;
   }
   #taps {
     float: right;
@@ -181,7 +195,9 @@ img{animation-delay: 2s;}
     height: 400px;
   }
 
-
+  .fa-shopping-cart:before {
+      display: none;
+  }
 
 
 /* ------------------- MEDIA QUERY --------------------------- */

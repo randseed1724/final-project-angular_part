@@ -27,12 +27,11 @@ export class AppComponent {
     this.sessionThang.checkLogin()
     // if logged in, redirect to /list
     .then((userInfo) => {
-       this.routerThang.navigate(['/profile']);
+      //  this.routerThang.navigate(['profile']);
        this.isLoggedIn = true;
     })
     // else don't do anything
     .catch((err) => {
-      console.log("<ERROR!></ERROR!>",err)
        this.routerThang.navigate(['/']);
     });
   }

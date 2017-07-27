@@ -14,7 +14,6 @@ export class LogInComponent implements OnInit {
   formPassword: string;
   errorMessage: string;
   booleanito: boolean;
-  booleanito2: boolean;
 
 
   constructor(
@@ -25,12 +24,19 @@ export class LogInComponent implements OnInit {
   ngOnInit() {
   }
 
-  submitLogin() {
+  logMeOut() {
+    this.sessionThang.logout()
+    .then(() => {
+      this.routerThang.navigate(['/#contact'])
+      this.booleanito = false;
+    })
+    .catch(() => { });
+  }
 
+  submitLogin() {
     this.sessionThang.login(this.formEmail, this.formPassword)
       .then((userFromApi) => {
           this.booleanito = true;
-          this.booleanito2 = true;
           this.routerThang.navigate(['/']);
           this.sessionThang.loggedIn(userFromApi);
       })

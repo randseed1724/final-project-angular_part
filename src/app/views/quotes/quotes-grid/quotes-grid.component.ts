@@ -10,12 +10,23 @@ export class QuotesGridComponent implements OnInit {
 
   quoteList = [];
   errorMessage: string = '';
+  name: string;
 
   constructor(private quotes: QuotesService) { }
 
 
 ngOnInit() {
-  // console.log("LOOK HERE ==== >",   this.quotes.getList() );
+  console.log("LOOK HERE ==== >",   this.quotes.getList() );
+
+
+  this.quotes.findUser()
+    .then((quotesUser) => {
+      this.name = quotesUser;
+    })
+    .catch((err) => {
+      this.errorMessage = 'There was an error. Try again later.';
+    });
+
 
   this.quotes.getList()
     .then((quotesParam) => {

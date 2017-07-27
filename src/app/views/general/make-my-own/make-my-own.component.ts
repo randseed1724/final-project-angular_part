@@ -48,7 +48,6 @@ export class NewQuoteComponent implements OnInit {
     this.myWriteQuoteService.createNew(this.newQuote).then((oneQuote)=>{
       this.quote = "";
       this.author = "";
-      console.log("SDKNOFOSHDFOIJPSRVOIDSJFO",this)
       // this.image = "";
       this.newQuote = {};
       this.allUserQuotes.push(oneQuote);
