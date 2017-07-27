@@ -5,16 +5,38 @@
       <p>Quote:
        <input type="text" name="quote" [(ngModel)]="quote" required />
       </p>
-      <p>Author Name:
+      <p>Author:
         <input type="text" name="author" [(ngModel)]="author" required />
+      </p>
+      <p>Category:
+        <input type="text" name="category" [(ngModel)]="category" required />
+      </p>
+      <p>Order:
+        <input type="text" name="order" [(ngModel)]="order" required />
       </p>
       <button type="submit"> Submit </button>
     </form>
 </div>
 
-<div *ngIf="submited">
-  <div *ngFor="let oneQuote of allUserQuotes">
-    Quote:  {{ oneQuote.quote}}
-    Name:  {{ oneQuote.author}}
-  </div>
-</div>
+
+
+<div *ngFor="let oneQuote of allUserQuotes">
+       <div class="col-sm-4 ">
+              <div id="{{ oneQuote.order }}" class="panel  gridofQuotes">
+                      <blockquote>
+                         <em>"{{ oneQuote.quote }}"</em>
+                         <br/>
+
+                         <span class="authorGrid">
+                       - {{ oneQuote.author }}
+                         </span>
+                      </blockquote>
+
+
+                    <div class="panel-footer">
+                          <a href="#" class="category">{{ oneQuote.category }}</a>
+                          <a href="api/quote/{{oneQuote._id}}" class="seeMore">More like this</a>
+                    </div>
+              </div>
+        </div>
+ </div>

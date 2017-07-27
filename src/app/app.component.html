@@ -33,11 +33,12 @@
   </nav>
 </div>
 
-<div *ngIf="isLoggedIn" id="write-my-own" >
-  <app-make-my-own></app-make-my-own>
-</div>
-
 
     <div id="productsGrid">
         <router-outlet></router-outlet>
+    </div>
+
+    <div *ngIf="isLoggedIn" id="write-my-own" >
+      <app-make-my-own></app-make-my-own>
+      <app-quotes-grid></app-quotes-grid>
     </div>

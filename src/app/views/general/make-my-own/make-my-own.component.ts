@@ -13,12 +13,18 @@ import { WriteQuoteService } from '../../../write-your-quote.service';
 
 export class NewQuoteComponent implements OnInit {
 
+//MAKING it an OBJECT
   newQuote: Object;
+
+//QUOTE MODEL
   quote: String;
   author: String;
+  category: Array<any> = [];
+  order: Number;
+
+//SAVING QUOTE
   allUserQuotes: Array<any> = [];
   submited: boolean = false;
-  // image: String;
 
   constructor(
     private myRoute: ActivatedRoute,
@@ -33,9 +39,10 @@ export class NewQuoteComponent implements OnInit {
 
   createNewQuote(formData){
     console.log(formData);
-    this.quote = formData.form.controls.quote._value;
-    this.author = formData.form.controls.author._value;
-    // this.image = formData.form.controls.image._value;
+    this.quote    = formData.form.controls.quote._value;
+    this.author   = formData.form.controls.author._value;
+    this.category = formData.form.controls.category._value;
+    this.order    = formData.form.controls.order._value;
     this.sendNewQuoteToApi();
   }
 
@@ -43,11 +50,14 @@ export class NewQuoteComponent implements OnInit {
     this.newQuote = {
       quote: this.quote,
       author: this.author,
-      // image: this.image
+      category: this.category,
+      order: this.order,
     }
     this.myWriteQuoteService.createNew(this.newQuote).then((oneQuote)=>{
       this.quote = "";
       this.author = "";
+      this.category = [];
+      this.order = 0;
       // this.image = "";
       this.newQuote = {};
       this.allUserQuotes.push(oneQuote);
