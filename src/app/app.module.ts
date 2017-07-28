@@ -4,11 +4,12 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { QuotesService } from './quotesrequest.service';
 import { SessionService } from './session.service';
-import { WriteQuoteService } from './write-your-quote.service';
 
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
+/////PIPES
+import { SearchPipe } from './pipes/search.pipe';
 
 ////GENERAL ROUTES
 import { AuthorComponent } from './views/general/author/author.component';
@@ -18,6 +19,7 @@ import { CategoriesComponent } from './views/general/categories/categories.compo
 import { AboutComponent } from './views/general/about/about.component';
 import { GalleryComponent } from './views/general/gallery/gallery.component';
 import { ContactComponent } from './views/general/contact/contact.component';
+import { SearchQuotesComponent } from './views/general/search-quotes/search-quotes.component';
 ////STORE ROUTES
 import { CartComponent } from './views/store/cart/cart.component';
 import { CheckoutComponent } from './views/store/checkout/checkout.component';
@@ -89,7 +91,9 @@ const appRoutes: Routes = [
     SingleQuoteComponent,
     QuotesGridComponent,
     LogInComponent,
-    SignUpComponent
+    SignUpComponent,
+    SearchQuotesComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
@@ -99,7 +103,7 @@ const appRoutes: Routes = [
     { enableTracing: true } // <-- debugging purposes only
   )  //  <!-- "routes" is the array defined above
   ],
-  providers: [QuotesService, SessionService, WriteQuoteService],
+  providers: [QuotesService, SessionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-
-import { WriteQuoteService } from '../../../write-your-quote.service';
+import { QuotesService } from '../../../quotesrequest.service';
 
 
 
@@ -28,7 +27,7 @@ export class NewQuoteComponent implements OnInit {
 
   constructor(
     private myRoute: ActivatedRoute,
-    private myWriteQuoteService: WriteQuoteService,
+    private myWriteQuoteService: QuotesService,
     private myNavigator: Router
   ) { };
 
