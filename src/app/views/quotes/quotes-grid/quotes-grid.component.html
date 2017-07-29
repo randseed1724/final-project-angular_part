@@ -1,9 +1,8 @@
-
 <div  class="container quote-list">
     <div class="row ">
         <div *ngFor="let oneQuote of quoteList">
                <div class="col-sm-4 ">
-                      <div id="{{ oneQuote.order }}" class="panel  gridofQuotes">
+                      <div id="order" class="panel  gridofQuotes">
 
                               <blockquote>
                                  <em>"{{ oneQuote.quote }}"</em>
@@ -17,10 +16,102 @@
 
                             <div class="panel-footer">
                                   <a href="#" class="category">{{ oneQuote.category }}</a>
-                                  <a href="api/quote/{{oneQuote._id}}" class="seeMore">More like this</a>
+                                  <a  class="seeMore">More like this</a>
                             </div>
                       </div>
                 </div>
          </div>
+     </div>
+</div>
+
+
+<div  class="container quote-list">
+    <div class="row ">
+        <div *ngFor="let oneQuote of quoteList">
+               <div class="col-sm-4 ">
+                      <div  class="panel  gridofQuotes">
+
+                              <blockquote>
+                                 <em>"{{ oneQuote.quote }}"</em>
+                                 <br/>
+
+                                 <span class="authorGrid">
+                               - {{ oneQuote.author }}
+                                 </span>
+                              </blockquote>
+
+
+                            <div class="panel-footer">
+                                  <a href="#" class="category">{{ oneQuote.category }}</a>
+                                  <a  class="seeMore">More like this</a>
+                            </div>
+                      </div>
+                </div>
+         </div>
+     </div>
+</div>
+
+
+<div  class="container quote-list">
+    <div class="row ">
+        <!-- <div *ngFor="let oneQuote of quoteList"> -->
+               <div class="col-sm-4 ">
+                      <div  class="panel  gridofQuotes">
+
+                              <blockquote>
+                                 <em>"Life is 10% what happens to you and 90% how you react to it."</em>
+                                 <br/>
+
+                                 <span class="authorGrid">
+                               - Charles R. Swindoll
+                                 </span>
+                              </blockquote>
+
+
+                            <div class="panel-footer">
+                                  <a href="#" class="category">Life</a>
+                                  <a  class="seeMore">More like this</a>
+                            </div>
+                      </div>
+                </div>
+                <div class="col-sm-4 ">
+                       <div  class="panel  gridofQuotes">
+
+                               <blockquote>
+                                  <em>"Try not to become a man of success, but rather try to become a man of value."</em>
+                                  <br/>
+
+                                  <span class="authorGrid">
+                                -  Albert Einstein
+                                  </span>
+                               </blockquote>
+
+
+                             <div class="panel-footer">
+                                   <a href="#" class="category">Value</a>
+                                   <a  class="seeMore">More like this</a>
+                             </div>
+                       </div>
+                 </div>
+                 <div class="col-sm-4 ">
+                        <div  class="panel  gridofQuotes">
+
+                                <blockquote>
+                                   <em>"It's not that I'm so smart, it's just that I stay with problems longer."</em>
+                                   <br/>
+
+                                   <span class="authorGrid">
+                                 - Albert Einstein
+                                   </span>
+                                </blockquote>
+
+
+                              <div class="panel-footer">
+                                    <a href="#" class="category">Problems</a>
+                                    <a  class="seeMore">More like this</a>
+                              </div>
+                        </div>
+                  </div>
+         <!-- </div> -->
      </div>
 </div>

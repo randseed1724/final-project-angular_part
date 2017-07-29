@@ -9,19 +9,19 @@ import { QuotesService } from '../../../quotesrequest.service';
 
 export class SingleQuoteComponent implements OnInit {
 
-  quote = [] ;
-  errorMessage: string;
-
-  constructor(private thisquote: QuotesService) { }
-
+  // quote: string ;
+  // errorMessage: string;
+  //
+  // constructor(private thisquote: QuotesService) { }
+  //
   ngOnInit() {
-      this.thisquote.getList()
-        .then((quotesList) => {
-          this.quote = quotesList;
-        })
-        .catch((err) => {
-          this.errorMessage = 'There was an error. Try again later.';
-        });
+  //     this.thisquote.getList()
+  //       .then((quotesList) => {
+  //         this.quote = quotesList;
+  //       })
+  //       .catch((err) => {
+  //         this.errorMessage = 'There was an error. Try again later.';
+  //       });
   }
 }
 

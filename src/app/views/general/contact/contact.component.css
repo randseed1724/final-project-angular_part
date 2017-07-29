@@ -11,3 +11,7 @@ color: #FFF;
 .h1 small {
 font-size: 24px;
 }
+
+footer {
+    display: none !important;
+}
