@@ -1,23 +1,11 @@
-<div id="yourQuote">
-  <h3>Add a Quote:</h3>
-
-  <form (ngSubmit)="createNewQuote(myForm)" #myForm="ngForm">
-      <p>Quote:
-       <input type="text" name="quote" [(ngModel)]="quote" required />
-      </p>
-      <p>Author:
-        <input type="text" name="author" [(ngModel)]="author" required />
-      </p>
-      <p>Category:
-        <input type="text" name="category" [(ngModel)]="category" required />
-      </p>
-      <p>Order:
-        <input type="text" name="order" [(ngModel)]="order" required />
-      </p>
-      <button type="submit"> Submit </button>
+<div id="yourQuote" class="container form-style-6">
+  <h1>Add a Quote:</h1>
+    <form (ngSubmit)="createNewQuote(myForm)" #myForm="ngForm">
+      <input type="text" name="quote"  placeholder="Write your quote here" [(ngModel)]="quote" required />
+      <input type="text" name="author" placeholder="Quote Author"  [(ngModel)]="author" required />
+      <input class="button" type="submit" value="Submit" />
     </form>
 </div>
-
 
 
 <div *ngFor="let oneQuote of allUserQuotes">
@@ -40,3 +28,5 @@
               </div>
         </div>
  </div>
+
+ <app-quotes-grid></app-quotes-grid>

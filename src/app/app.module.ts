@@ -4,6 +4,8 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { QuotesService } from './quotesrequest.service';
 import { SessionService } from './session.service';
+import { WriteQuoteService } from './write-your-quote.service';
+
 
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -103,7 +105,7 @@ const appRoutes: Routes = [
     { enableTracing: true } // <-- debugging purposes only
   )  //  <!-- "routes" is the array defined above
   ],
-  providers: [QuotesService, SessionService],
+  providers: [QuotesService, SessionService, WriteQuoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

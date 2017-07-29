@@ -77,7 +77,7 @@ blockquote{
   font-style: italic;
 
   /*Borders - (Optional)*/
-  border-left: 15px solid #c76c0c;
+  border-left: 15px solid rgba(39, 124, 234, 0.26);
   /*border-right: 2px solid #c76c0c;*/
 
   /*Box Shadow - (Optional)*/

@@ -30,6 +30,7 @@
     top: 38%;
     z-index: 3;
     left: 90.5%;
+    width: 20px;
 }
 .rslides_nav.rslides1_nav.prev:hover {
   color: #03A9F4;
@@ -49,6 +50,11 @@
         color: rgba(3, 169, 244, 0.24);
     top: 38%;
     z-index: 2;
+    width: 20px;
+}
+
+i.fa.fa-chevron-left.container, i.fa.fa-chevron-right.container {
+    width: 20px;
 }
 
 
@@ -59,7 +65,7 @@
 
 footer {
     background: #3c3d41;
-    height: 450px;
+    height: 150px;
     padding: 2em;
     color: white;
 }

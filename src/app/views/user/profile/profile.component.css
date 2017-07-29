@@ -1,0 +1,7 @@
+.user {
+    border: 3px solid green;
+    background: rgba(0, 128, 0, 0.07);
+    padding: 1em;
+    margin-bottom: 2em;
+    border-radius: 10px;
+}

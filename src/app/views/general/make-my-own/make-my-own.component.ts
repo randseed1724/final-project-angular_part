@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { QuotesService } from '../../../quotesrequest.service';
+import { WriteQuoteService } from '../../../write-your-quote.service';
 
 
 
@@ -18,8 +18,8 @@ export class NewQuoteComponent implements OnInit {
 //QUOTE MODEL
   quote: String;
   author: String;
-  category: Array<any> = [];
-  order: Number;
+  // category: Array<any> = [];
+  // order: Number;
 
 //SAVING QUOTE
   allUserQuotes: Array<any> = [];
@@ -27,7 +27,7 @@ export class NewQuoteComponent implements OnInit {
 
   constructor(
     private myRoute: ActivatedRoute,
-    private myWriteQuoteService: QuotesService,
+    private myWriteQuoteService: WriteQuoteService,
     private myNavigator: Router
   ) { };
 
@@ -40,8 +40,8 @@ export class NewQuoteComponent implements OnInit {
     console.log(formData);
     this.quote    = formData.form.controls.quote._value;
     this.author   = formData.form.controls.author._value;
-    this.category = formData.form.controls.category._value;
-    this.order    = formData.form.controls.order._value;
+    // this.category = formData.form.controls.category._value;
+    // this.order    = formData.form.controls.order._value;
     this.sendNewQuoteToApi();
   }
 
@@ -49,15 +49,15 @@ export class NewQuoteComponent implements OnInit {
     this.newQuote = {
       quote: this.quote,
       author: this.author,
-      category: this.category,
-      order: this.order,
+      // category: this.category,
+      // order: this.order,
     }
     this.myWriteQuoteService.createNew(this.newQuote).then((oneQuote)=>{
       this.quote = "";
       this.author = "";
-      this.category = [];
-      this.order = 0;
-      // this.image = "";
+      // this.category = [];
+      // this.order = 0;
+      // // this.image = "";
       this.newQuote = {};
       this.allUserQuotes.push(oneQuote);
       this.submited = true;

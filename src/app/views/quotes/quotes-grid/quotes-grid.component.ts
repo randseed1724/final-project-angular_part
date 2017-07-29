@@ -16,15 +16,13 @@ export class QuotesGridComponent implements OnInit {
 
 
 ngOnInit() {
-  console.log("LOOK HERE ==== >",   this.quotes.getList() );
-
 
   this.quotes.findUser()
     .then((quotesUser) => {
       this.name = quotesUser;
     })
     .catch((err) => {
-      this.errorMessage = 'There was an error. Try again later.';
+      this.errorMessage = 'O.O There was an error. Try again later. O.O';
     });
 
 
